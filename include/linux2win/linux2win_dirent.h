@@ -13,7 +13,7 @@
 #include "linux2win_config.h"
 
 #ifdef HAVE_DIRENT_H
-#   include <dirent.h"
+#   include <dirent.h>
 #else
 
 #   include "linux2win/_dirent.h"
