@@ -24,6 +24,9 @@
 #ifndef DLFCN_H
 #define DLFCN_H
 
+#include "linux2win_config.h"
+
+
 #ifdef HAVE_DLFCN_H
 #   include <dlfnc.h"
 #else

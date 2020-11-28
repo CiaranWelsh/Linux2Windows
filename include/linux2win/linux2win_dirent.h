@@ -10,6 +10,8 @@
 #ifndef DIRENT_H
 #define DIRENT_H
 
+#include "linux2win_config.h"
+
 #ifdef HAVE_DIRENT_H
 #   include <dirent.h"
 #else
