@@ -5,9 +5,11 @@
 #ifndef LINUX2WINDOWS_CONFIG_H_IN_H
 #define LINUX2WINDOWS_CONFIG_H_IN_H
 
-#define _USE_MATH_DEFINES
-#include <math.h>
-
+#ifdef _WIN32
+#   ifndef _USE_MATH_DEFINES
+#       define _USE_MATH_DEFINES
+#   endif
+#endif
 
 /* Number of bits in a file offset, on hosts where this is settable. */
 #cmakedefine _FILE_OFFSET_BITS
