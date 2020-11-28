@@ -5,7 +5,7 @@
 
 
 #ifdef HAVE_UNISTD_H
-#   include <unistd.h"
+#   include <unistd.h>
 #else
 
 #   include "linux2win/_unistd.h"

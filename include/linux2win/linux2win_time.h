@@ -5,7 +5,7 @@
 
 
 #ifdef HAVE_TIME_H
-#   include <time.h"
+#   include <time.h>
 #else
 
 #   include "linux2win/_time.h"

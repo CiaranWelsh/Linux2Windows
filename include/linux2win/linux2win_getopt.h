@@ -5,7 +5,7 @@
 
 
 #ifdef HAVE_GETOPT_H
-#   include <getopt.h"
+#   include <getopt.h>
 #else
 
 #   include "linux2win/_getopt.h"
