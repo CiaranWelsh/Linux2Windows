@@ -5,7 +5,7 @@
 
 
 #ifdef HAVE_USLEEP_H
-#   include <usleep.h>
+#   include <usleep.h"
 #else
 
 #   include "linux2win/_usleep.h"
