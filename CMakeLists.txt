@@ -44,6 +44,9 @@ check_include_file(dirent.h HAVE_DIRENT_H)
 # Check whether we have dlfcn.h
 check_include_file(dlfcn.h HAVE_DLFCN_H)
 
+# check to see if ssize_t exists. On linux yes, windows no.
+check_type_size(ssize_t SSIZE_T LANGUAGE C)
+
 configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/linux2win_config.h.in"
         "${CMAKE_CURRENT_BINARY_DIR}/linux2win_config.h"

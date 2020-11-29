@@ -28,7 +28,7 @@
 
 
 #ifdef HAVE_DLFCN_H
-#   include <dlfnc.h>
+#   include <dlfcn.h>
 #else
 
 #   include "linux2win/_dlfnc.h"
