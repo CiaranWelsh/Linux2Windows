@@ -32,7 +32,7 @@ check_include_file(sys/time.h HAVE_SYS_TIME_H)
 check_include_file(getopt.h HAVE_GETOPT_H)
 
 # check to see if we have usleep
-check_include_file(usleep.h HAVE_USLEEP_H)
+check_function_exists(usleep HAVE_USLEEP_H)
 
 # on linux we have include strings while windows its string (no 's')
 check_include_file(string.h HAVE_STRING)
