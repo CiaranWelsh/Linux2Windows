@@ -2,7 +2,7 @@
 #include <Windows.h>
 #include <limits.h>
 #include <winnt.h>
-#include "htslib/_usleep.h"
+#include "_usleep.h"
 
 unsigned long currentResolution = 0;
 

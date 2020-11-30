@@ -18,6 +18,15 @@ include(CheckFunctionExists)
 include(CheckTypeSize)
 include(GNUInstallDirs)
 
+# put all runtime targets (exe and dll) into bin
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
+
+# put libraries into lib
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+
+# archives
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+
 ##########################################################################################
 #   Defines for config.h.in
 #
@@ -55,15 +64,19 @@ configure_file(
 
 # define an interface target that propagates include directories to
 #   other targets
+file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/include/linux2win/*")
+MESSAGE(STATUS "SOURCES ${SOURCES}")
+add_library(linux2win STATIC ${SOURCES})
 
-add_library(linux2win INTERFACE)
+set_target_properties(linux2win PROPERTIES LINKER_LANGUAGE CXX)
 
-target_include_directories(linux2win INTERFACE
+target_include_directories(linux2win PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
         "$<INSTALL_INTERFACE:include>"
         )
 
+install(TARGETS linux2win )
 
 
 

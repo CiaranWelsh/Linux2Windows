@@ -31,7 +31,7 @@
 #   include <dlfcn.h>
 #else
 
-#   include "linux2win/linux2win_dlfcn.h"
+#   include "linux2win/_dlfcn.h"
 
 #endif
 
