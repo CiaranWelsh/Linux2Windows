@@ -85,7 +85,47 @@ configure_file(
 
 # define an interface target that propagates include directories to
 #   other targets
-file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/include/linux2win/*")
+
+set(
+        SOURCES
+        include/linux2win/linux2win_dirent.h
+        include/linux2win/linux2win_dlfcn.h
+        include/linux2win/linux2win_getopt.h
+        include/linux2win/linux2win_mkstemp.h
+        include/linux2win/linux2win_popen.h
+        include/linux2win/linux2win_regex.h
+        include/linux2win/linux2win_stat_modes.h
+        include/linux2win/linux2win_strings.h
+        include/linux2win/linux2win_time.h
+        include/linux2win/linux2win_unistd.h
+        include/linux2win/linux2win_usleep.h
+        include/linux2win/linux2win_warning.h
+)
+
+if (NOT HAVE_DIRENT)
+    set(SOURCES ${SOURCES} include/linux2win/_dirent.h)
+endif()
+
+if (NOT HAVE_DLFCN)
+    set(SOURCES ${SOURCES} include/linux2win/_dlfcn.h src/_dlfcn.c)
+endif()
+
+if (NOT HAVE_GETOPT)
+    set(SOURCES ${SOURCES} include/linux2win/_getopt.h src/_getopt.c)
+endif()
+
+if (NOT HAVE_TIME)
+    set(SOURCES ${SOURCES} include/linux2win/_time.h src/_time.c)
+endif()
+
+if (NOT HAVE_UNISTD)
+    set(SOURCES ${SOURCES} include/linux2win/_unistd.h)
+endif()
+
+if (NOT HAVE_USLEEP)
+    set(SOURCES ${SOURCES} include/linux2win/_usleep.h src/_usleep.c)
+endif()
+
 MESSAGE(STATUS "SOURCES ${SOURCES}")
 add_library(linux2win STATIC ${SOURCES})
 

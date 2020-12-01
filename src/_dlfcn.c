@@ -23,6 +23,7 @@
  * THE SOFTWARE.
  */
 
+#ifdef _MSC_VER
 #ifndef _WIN32_WINNT
 #define _WIN32_WINNT 0x0501
 #endif
@@ -476,3 +477,5 @@ BOOL WINAPI DllMain( HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved )
     return TRUE;
 }
 #endif
+
+#endif // _MSC_VER

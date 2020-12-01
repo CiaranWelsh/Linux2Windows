@@ -1,4 +1,5 @@
-#include "_time.h"
+#ifdef _MSC_VER
+#include "linux2win/_time.h"
  
 int gettimeofday(struct timeval* t,void* timezone)
 {       struct _timeb timebuffer;
@@ -16,3 +17,4 @@ clock_t times (struct tms *__buffer) {
 	__buffer->tms_cutime = 0;
 	return __buffer->tms_utime;
 }
+#endif // _MSC_VER
