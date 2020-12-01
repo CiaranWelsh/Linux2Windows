@@ -47,6 +47,12 @@ check_include_file(dlfcn.h HAVE_DLFCN_H)
 # check to see if ssize_t exists. On linux yes, windows no.
 check_type_size(ssize_t SSIZE_T LANGUAGE C)
 
+# Check whether we have regex.h
+check_include_file(regex.h REGEX_H) # linux
+
+# Check whether we have regex
+check_include_file(regex REGEX) # win
+
 configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/linux2win_config.h.in"
         "${CMAKE_CURRENT_BINARY_DIR}/linux2win_config.h"

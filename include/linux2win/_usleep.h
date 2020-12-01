@@ -1,3 +1,6 @@
+#ifndef _USLEEP_H
+#define _USLEEP_H
+
 #pragma once
 
 // Sets resolution of timers used by Sleep() and SetWaitableTimer() to most accurate and lowest values possible supported by system.
@@ -6,3 +9,6 @@ unsigned long setHighestTimerResolution(unsigned long timer_res_us);
 
 // Suspends the current thread in sleep for time period, in microseconds.
 void usleep(__int64 usec);
+
+
+#endif //_USLEEP_H

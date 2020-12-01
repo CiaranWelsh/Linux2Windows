@@ -1,6 +1,6 @@
 
-#ifndef HTSLIB_CMAKE__UNISTD_H
-#define HTSLIB_CMAKE__UNISTD_H
+#ifndef _UNISTD_H
+#define _UNISTD_H
 
 /* This is intended as a drop-in replacement for unistd.h on Windows.
  * Please add functionality as neeeded.
