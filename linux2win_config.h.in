@@ -54,6 +54,17 @@
 // indicator for presence of regex
 #cmakedefine HAVE_REGEX
 
+// indicator for presence of pipe
+#cmakedefine HAVE_PIPE
+
+// indicator for presence of popen
+#cmakedefine HAVE_POPEN
+
+// indicator for presence of pclose
+#cmakedefine HAVE_PCLOSE
+
+
+
 #ifdef _MSC_VER
 //not #if defined(_WIN32) || defined(_WIN64) because we have strncasecmp in mingw
 #define strncasecmp _strnicmp

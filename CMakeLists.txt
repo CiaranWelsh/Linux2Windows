@@ -62,6 +62,15 @@ check_include_file(regex.h REGEX_H) # linux
 # Check whether we have regex
 check_include_file(regex REGEX) # win
 
+#/* check if we have pipe C function
+check_function_exists(pipe HAVE_PIPE)
+
+#/* check if we have popen C function
+check_function_exists(popen HAVE_POPEN)
+
+#/* check if we have pclose C function
+check_function_exists(pcose HAVE_CLOSE)
+
 configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/linux2win_config.h.in"
         "${CMAKE_CURRENT_BINARY_DIR}/linux2win_config.h"
