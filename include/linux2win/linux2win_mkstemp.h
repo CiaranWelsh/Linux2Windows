@@ -6,8 +6,14 @@
 #define SAMTOOLS_CMAKE_LINUX2WIN_MKSTEMP_H
 
 #include "linux2win/linux2win_strings.h"
+#include "linux2win/linux2win_time.h"
+#include "linux2win/linux2win_stat_modes.h"
+
+#include <fcntl.h>
 
 #include <errors.h>
+
+#include <minwinbase.h>
 
 /* mkstemp extracted from libc/sysdeps/posix/tempname.c.  Copyright
    (C) 1991-1999, 2000, 2001, 2006 Free Software Foundation, Inc.
@@ -97,7 +103,7 @@ mkstemp (char *tmpl)
       v /= 62;
       XXXXXX[5] = letters[v % 62];
 
-      fd = open (tmpl, O_RDWR | O_CREAT | O_EXCL, _S_IREAD | _S_IWRITE);
+      fd = open (tmpl, O_RDWR | O_CREAT | O_EXCL, S_IRUSR | S_IWUSR);
       if (fd >= 0)
     {
       errno = save_errno;
