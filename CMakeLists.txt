@@ -62,6 +62,12 @@ check_include_file(regex.h REGEX_H) # linux
 # Check whether we have regex
 check_include_file(regex REGEX) # win
 
+# Check whether we have strings.h
+check_include_file(strings.h HAVE_STRINGS_H)
+
+# Check whether we have string.h
+check_include_file(string.h HAVE_STRING_H)
+
 #/* check if we have pipe C function
 check_function_exists(pipe HAVE_PIPE)
 

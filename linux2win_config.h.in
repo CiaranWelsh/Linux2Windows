@@ -63,6 +63,14 @@
 // indicator for presence of pclose
 #cmakedefine HAVE_PCLOSE
 
+// indicator for presence of strings.h
+#cmakedefine HAVE_STRINGS_H
+
+// indicator for presence of string.h
+#cmakedefine HAVE_STRING_H
+
+
+
 
 
 #ifdef _MSC_VER

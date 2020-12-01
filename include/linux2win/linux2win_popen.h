@@ -23,6 +23,5 @@ inline void _pclose(FILE* file) {
 }
 #endif
 
-#endif
 
 #endif //SAMTOOLS_CMAKE_LINUX2WIN_POPEN_H
