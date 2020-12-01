@@ -99,7 +99,7 @@ set(
         include/linux2win/linux2win_time.h
         include/linux2win/linux2win_unistd.h
         include/linux2win/linux2win_usleep.h
-        include/linux2win/linux2win_warning.h
+        include/linux2win/linux2win_error.h
 )
 
 if (NOT HAVE_DIRENT)

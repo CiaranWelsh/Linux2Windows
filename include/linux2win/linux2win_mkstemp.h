@@ -1,6 +1,4 @@
-//
-// Created by Ciaran on 01/12/2020.
-//
+#ifdef _MSC_VER
 
 #ifndef SAMTOOLS_CMAKE_LINUX2WIN_MKSTEMP_H
 #define SAMTOOLS_CMAKE_LINUX2WIN_MKSTEMP_H
@@ -11,7 +9,9 @@
 
 #include <fcntl.h>
 
-#include <errors.h>
+#include "linux2win/linux2win_error.h"
+
+
 
 #include <minwinbase.h>
 
@@ -119,3 +119,4 @@ mkstemp (char *tmpl)
 }
 
 #endif //SAMTOOLS_CMAKE_LINUX2WIN_MKSTEMP_H
+#endif // _MSC_VER
