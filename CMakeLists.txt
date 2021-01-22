@@ -7,7 +7,8 @@ set(PROJECT_VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 
 project(Linux2Windows VERSION ${PROJECT_VERSION})
 
-set(CMAKE_CXX_STANDARD 14)
+# this should be set by the top level project!
+#set(CMAKE_CXX_STANDARD 14)
 
 include(CheckSymbolExists)
 include(CheckCXXSymbolExists)
@@ -77,6 +78,13 @@ check_function_exists(popen HAVE_POPEN)
 #/* check if we have pclose C function
 check_function_exists(pcose HAVE_CLOSE)
 
+# check if pid_t exists. Linux yes, windows no.
+check_symbol_exists(pid_t "sys/types.h" HAVE_PID_T)
+
+# Check if we have stdint.h
+check_include_file(stdint.h HAVE_STDINT_H)
+
+message(STATUS "HAVE_STDINT_H ${HAVE_STDINT_H}")
 configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/linux2win_config.h.in"
         "${CMAKE_CURRENT_BINARY_DIR}/linux2win_config.h"
@@ -133,6 +141,7 @@ set_target_properties(linux2win PROPERTIES LINKER_LANGUAGE CXX)
 
 target_include_directories(linux2win PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
         "$<INSTALL_INTERFACE:include>"
         )

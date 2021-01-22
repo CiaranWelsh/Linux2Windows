@@ -69,6 +69,11 @@
 // indicator for presence of string.h
 #cmakedefine HAVE_STRING_H
 
+// indicator for pid_t symbol
+#cmakedefine HAVE_PID_T
+
+// indicator for presence of stdint.h
+#cmakedefine HAVE_STDINT_H
 
 
 
